@@ -9,9 +9,9 @@ cloudinary.config({
 
 const storage = new CloudinaryStorage({
   cloudinary,
-  folder: "NodeJs",
   allowedFormats: [".png", ".jpg"],
   params: {
+    folder: "nodeJS",
     transformation: [{ width: 500, height: 500, crop: "limit" }],
   },
 });
