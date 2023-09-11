@@ -1,8 +1,12 @@
-const uploadImage = (req, res) => {
+const ImageDb = require("../models/imageSchema");
+
+const uploadImage = async (req, res) => {
   console.log(req.file);
-  res.json({
-    msg: "File Uploaded Succesfully",
+  const uploadedImage = req.file.path;
+  const uploadToDb = await ImageDb.create({
+    path: uploadedImage,
   });
+  res.redirect("images");
 };
 
 module.exports = uploadImage;

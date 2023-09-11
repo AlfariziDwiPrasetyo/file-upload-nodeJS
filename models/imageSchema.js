@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const db = require("./connect");
 
 const imageSchema = new mongoose.Schema({
-  name: {
+  path: {
     type: String,
     required: true,
   },
